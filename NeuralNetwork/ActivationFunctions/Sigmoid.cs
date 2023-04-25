@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NeuralNetwork.ActivationFunctions
+namespace NeuralNetwork
 {
     public class Sigmoid : IActivationFunction
     {
@@ -11,7 +11,9 @@ namespace NeuralNetwork.ActivationFunctions
 
         public float CalculateFunctionDerivative(float x)
         {
-            throw new System.NotImplementedException();
+            float sigmoid = CalculateFunction(x);
+
+            return sigmoid / (1.0f - sigmoid);
         }
     }
 }

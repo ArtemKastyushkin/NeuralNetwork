@@ -5,12 +5,13 @@ namespace NeuralNetwork
     public abstract class Neuron
     {
         protected float[] _inputs;
-        protected float _output;
+
+        public float Output { get; protected set; }
 
         public Neuron(int inputCount)
         {
             _inputs = new float[inputCount];
-            _output = 0.0f;
+            Output = 0.0f;
         }
 
         private void FillInputs(float[] inputs)

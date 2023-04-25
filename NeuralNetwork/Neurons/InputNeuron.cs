@@ -1,4 +1,4 @@
-﻿namespace NeuralNetwork.Neurons
+﻿namespace NeuralNetwork
 {
     public class InputNeuron : Neuron
     {
@@ -6,7 +6,7 @@
 
         protected override void CalculateOutput()
         {
-            _output = _inputs[0];
+            Output = _inputs[0];
         }
     }
 }

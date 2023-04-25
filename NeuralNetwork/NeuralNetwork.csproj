@@ -38,9 +38,14 @@
   <ItemGroup>
     <Compile Include="ActivationFunctions\IActivationFunction.cs" />
     <Compile Include="ActivationFunctions\Sigmoid.cs" />
+    <Compile Include="Layers\Layer.cs" />
+    <Compile Include="NeuralNetwork.cs" />
+    <Compile Include="Neurons\HiddenNeuron.cs" />
     <Compile Include="Neurons\InputNeuron.cs" />
     <Compile Include="Neurons\Neuron.cs" />
-    <Compile Include="Neurons\NeuronWithDeltaAndWeights.cs" />
+    <Compile Include="Neurons\DeltaAndWeightsNeuron.cs" />
+    <Compile Include="Neurons\OutputNeuron.cs" />
+    <Compile Include="Topology.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
