@@ -6,6 +6,7 @@ namespace NeuralNetwork
     {
         protected float[] _inputs;
 
+        public int InputsAmount => _inputs.Length;
         public float Output { get; protected set; }
 
         public Neuron(int inputCount)

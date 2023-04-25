@@ -38,7 +38,11 @@
   <ItemGroup>
     <Compile Include="ActivationFunctions\IActivationFunction.cs" />
     <Compile Include="ActivationFunctions\Sigmoid.cs" />
+    <Compile Include="Layers\HiddenLayer.cs" />
+    <Compile Include="Layers\InputLayer.cs" />
     <Compile Include="Layers\Layer.cs" />
+    <Compile Include="Layers\LearningLayer.cs" />
+    <Compile Include="Layers\OutputLayer.cs" />
     <Compile Include="NeuralNetwork.cs" />
     <Compile Include="Neurons\HiddenNeuron.cs" />
     <Compile Include="Neurons\InputNeuron.cs" />

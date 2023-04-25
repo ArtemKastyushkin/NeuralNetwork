@@ -27,7 +27,7 @@ namespace NeuralNetwork
                 inputNeurons[i] = new InputNeuron(1);
             }
 
-            return new Layer(inputNeurons);
+            return new InputLayer(inputNeurons);
         }
 
         private List<Layer> CreateHiddenLayers()
@@ -45,7 +45,7 @@ namespace NeuralNetwork
                     hiddenNeurons[j] = new HiddenNeuron(lastLayer.NeuronsCount);
                 }
 
-                hiddenLayers.Add(new Layer(hiddenNeurons));
+                hiddenLayers.Add(new HiddenLayer(hiddenNeurons));
             }
 
             return hiddenLayers;
@@ -62,7 +62,24 @@ namespace NeuralNetwork
                 outputNeurons[i] = new OutputNeuron(lastLayer.NeuronsCount);
             }
 
-            return new Layer(outputNeurons);
+            return new OutputLayer(outputNeurons);
+        }
+
+        private void SendSignalsToInputLayer(float[] inputs)
+        {
+            _layers[0].FeedForward(inputs);
+        }
+
+        public void FeedForward(float[] inputs)
+        {
+            SendSignalsToInputLayer(inputs);
+
+            for (int i = 1; i < _layers.Count; i++)
+            {
+                float[] previousLayerSignals = _layers[i - 1].GetSignals();
+
+                _layers[i].FeedForward(previousLayerSignals);
+            }
         }
     }
 }

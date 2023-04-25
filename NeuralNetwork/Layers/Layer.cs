@@ -1,6 +1,8 @@
-﻿namespace NeuralNetwork
+﻿using System;
+
+namespace NeuralNetwork
 {
-    public class Layer
+    public abstract class Layer
     {
         protected Neuron[] _neurons;
 
@@ -21,6 +23,12 @@
             }
 
             return signals;
+        }
+
+        public virtual void FeedForward(float[] signals) 
+        {
+            if (_neurons[0].InputsAmount != signals.Length)
+                throw new Exception("The amount of signals and neuron inputs doesn't match!");
         }
     }
 }
